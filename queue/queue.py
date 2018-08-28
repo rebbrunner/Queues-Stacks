@@ -32,13 +32,13 @@ class Queue:
             i += 1
 
     def binary_search(self, item):
-        l, r = 0, 0
-        while (l < r):
-            mid = (l + r) / 2
+        l, r = 0, len(self.items) - 1
+        while (l <= r):
+            mid = int((l + r) / 2)
             if (self.items[mid] < item):
                 l = mid + 1
-            else if (self.items[mid] > item):
+            elif (self.items[mid] > item):
                 r = mid - 1
-            else if (self.items[mid] = item):
+            elif (self.items[mid] == item):
                 return mid
-        return 0
+        return "Item not in queue"
