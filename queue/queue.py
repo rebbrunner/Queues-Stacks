@@ -22,10 +22,10 @@ class Queue:
         else:
             return False
     def insertion_sort(self):
-        int i, j = 1, 1
+        i, j = 1, 1
         while (i < len(self.items)):
             j = i
-            while (j > 0 and data[j-1] > data[j]):
-                data[j], data[j-1] = data[j-1], data[j]
+            while (j > 0 and self.items[j-1] > self.items[j]):
+                self.items[j], self.items[j-1] = self.items[j-1], self.items[j]
                 j -= 1
             i += 1
