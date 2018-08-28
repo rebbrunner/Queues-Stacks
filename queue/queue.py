@@ -21,6 +21,7 @@ class Queue:
             return True
         else:
             return False
+
     def insertion_sort(self):
         i, j = 1, 1
         while (i < len(self.items)):
@@ -29,3 +30,15 @@ class Queue:
                 self.items[j], self.items[j-1] = self.items[j-1], self.items[j]
                 j -= 1
             i += 1
+
+    def binary_search(self, item):
+        l, r = 0, 0
+        while (l < r):
+            mid = (l + r) / 2
+            if (self.items[mid] < item):
+                l = mid + 1
+            else if (self.items[mid] > item):
+                r = mid - 1
+            else if (self.items[mid] = item):
+                return mid
+        return 0
