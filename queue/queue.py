@@ -21,3 +21,11 @@ class Queue:
             return True
         else:
             return False
+    def insertion_sort(self):
+        int i, j = 1, 1
+        while (i < len(self.items)):
+            j = i
+            while (j > 0 and data[j-1] > data[j]):
+                data[j], data[j-1] = data[j-1], data[j]
+                j -= 1
+            i += 1
