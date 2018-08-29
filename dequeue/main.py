@@ -38,9 +38,9 @@ myDequeue.pushBack(8.4)
 print(myDequeue.items)
 
 #Pop item off the back
-myDequeue.popBack()
+print(myDequeue.popBack())
 print(myDequeue.items)
 
 #Pop item off the front
-myDequeue.popFront()
+print(myDequeue.popFront())
 print(myDequeue.items)
