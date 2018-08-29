@@ -24,3 +24,13 @@ class Dequeue():
 
     def size(self):
         return len(self.items)
+
+    def insertion_sort(self):
+        a = self.items
+        i, j = 1, 1
+        while (i < self.size()):
+            j = i
+            while (j > 0 and a[j-1] > a[j]):
+                a[j-1], a[j] = a[j], a[j-1]
+                j -= 1
+            i += 1
