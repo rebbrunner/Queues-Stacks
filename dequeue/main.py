@@ -11,9 +11,12 @@ myDequeue = Dequeue()
 
 #Add items to dequeue
 for i in range(5):
-    myDequeue.pushFront(randint(1, 6))
+    myDequeue.pushFront(randint(1, 5))
 print(myDequeue.items)
 
 #Sort items in dequeue
 myDequeue.insertion_sort()
 print(myDequeue.items)
+
+#Search for 5
+print(myDequeue.binary_search(5))

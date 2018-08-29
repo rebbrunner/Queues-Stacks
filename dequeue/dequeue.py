@@ -34,3 +34,17 @@ class Dequeue():
                 a[j-1], a[j] = a[j], a[j-1]
                 j -= 1
             i += 1
+
+    def binary_search(self, item):
+        left = 0
+        right = len(self.items)
+        right -= 1
+        while (left <= right):
+            middle = int((left + right) / 2)
+            if (self.items[middle] < item):
+                left = middle + 1
+            elif (self.items[middle] > item):
+                right = middle - 1
+            elif (self.items[middle] == item):
+                return middle
+        return None
