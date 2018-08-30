@@ -50,18 +50,16 @@ class Dequeue():
         return None
 
     def merge_sort(self):
-        #Declarations
-        A = self.items
-        s = self.size()
+        self.merge_sort_main(self.items)
 
-        print("Splitting")
-        if s > 1:
-            mid = s//2
+    def merge_sort_main(self, A):
+        if len(A) > 1:
+            mid = len(A)//2
             l = A[:mid]
             r = A[mid:]
 
-            merge_sort(l)
-            merge_sort(r)
+            self.merge_sort_main(l)
+            self.merge_sort_main(r)
 
             i, j, k = 0, 0, 0
             while i < len(l) and j < len(r):
@@ -82,4 +80,3 @@ class Dequeue():
                 A[k] = r[j]
                 j += 1
                 k += 1
-        #Merging
