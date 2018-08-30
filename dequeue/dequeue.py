@@ -57,8 +57,8 @@ class Dequeue():
         print("Splitting")
         if s > 1:
             mid = s//2
-            l = a[:mid]
-            r = a[mid:]
+            l = A[:mid]
+            r = A[mid:]
 
             merge_sort(l)
             merge_sort(r)
