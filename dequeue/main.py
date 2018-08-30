@@ -15,8 +15,5 @@ for i in range(5):
 print(myDequeue.items)
 
 #Sort items in dequeue
-myDequeue.insertion_sort()
+myDequeue.merge_sort()
 print(myDequeue.items)
-
-#Search for 5
-print(myDequeue.binary_search(5))

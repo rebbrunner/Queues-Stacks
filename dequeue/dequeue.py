@@ -48,3 +48,38 @@ class Dequeue():
             elif (self.items[middle] == item):
                 return middle
         return None
+
+    def merge_sort(self):
+        #Declarations
+        A = self.items
+        s = self.size()
+
+        print("Splitting")
+        if s > 1:
+            mid = s//2
+            l = a[:mid]
+            r = a[mid:]
+
+            merge_sort(l)
+            merge_sort(r)
+
+            i, j, k = 0, 0, 0
+            while i < len(l) and j < len(r):
+                if l[i] < r[j]:
+                    A[k] = l[i]
+                    i += 1
+                else:
+                    A[k] = r[j]
+                    j += 1
+                k += 1
+
+            while i < len(l):
+                A[k] = l[i]
+                i += 1
+                k += 1
+
+            while j < len(r):
+                A[k] = r[j]
+                j += 1
+                k += 1
+        #Merging
