@@ -1,5 +1,5 @@
 from heap import Heap
 
 myHeap = Heap()
-myHeap.buildHeap([5,1,2,4,3])
+myHeap.buildFromList([5, 3, 4, 1, 2])
 print(myHeap.heapList)
