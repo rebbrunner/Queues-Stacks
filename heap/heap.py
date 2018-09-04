@@ -14,7 +14,7 @@ class Heap():
                 temp = self.list[index//2]
                 self.list[index//2] = self.list[index]
                 self.list[index] = temp
-            i = i // 2
+            index = index // 2
 
     def insert(self, item):
         self.list.append(item)
@@ -28,7 +28,7 @@ class Heap():
                 temp = self.list[index]
                 self.list[index] = self.list[minimum]
                 self.list[minimum] = temp
-            i = minimum
+            index = minimum
 
     def smallest(self, index):
         if index * 2 + 1 > self.size:
