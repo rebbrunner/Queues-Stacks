@@ -5,58 +5,52 @@
 
 class Heap():
     def __init__(self):
-        self.list = [0]
-        self.size = 0
+        self.heapList = [0]
+        self.currentSize = 0
 
-    def percUp(self, index):
-        while index // 2 > 0:
-            if self.list[index] < self.list[index // 2]:
-                temp = self.list[index//2]
-                self.list[index//2] = self.list[index]
-                self.list[index] = temp
-            i = i // 2
+    def percUp(self, i):
+        while (i // 2) > 0:
+            if self.heapList[i] < self.heapList[i//2]:
+                temp = self.heapList[i//2]
+                self.heapList[i//2] = self.heapList[i]
+                self.heapList[i] = temp
+            i /= 2
 
     def insert(self, item):
-        self.list.append(item)
-        self.size = self.size + 1
-        self.percUp(self.size)
+        self.heapList.append(item)
+        self.currentSize += 1
+        self.percUp(self.currentSize)
 
-    def percDown(self, index):
-        while (index * 2) <= self.size:
-            minimum = self.smallest(index)
-            if self.list[index] > self.list[minimum]:
-                temp = self.list[index]
-                self.list[index] = self.list[minimum]
-                self.list[minimum] = temp
-            i = minimum
+    def percDown(self, i):
+        while (i * 2) <= self.currentSize:
+            child = self.minChild(i)
+            if self.heapList[i] > self.heapList[child]:
+                temp = self.heapList[i]
+                self.heapList[i] = self.heapList[child]
+                self.heapList[child] = temp
+            i = child
 
-    def smallest(self, index):
-        if index * 2 + 1 > self.size:
-            return index * 2
+    def minChild(self, i):
+        if i * 2 + 1 > self.currentSize:
+            return i * 2
         else:
-            if self.list[index * 2] < self.list[index*2+1]:
-                return index * 2
+            if self.heapList[i*2] < self.heapList[i*2+1]:
+                return i * 2
             else:
-                return index * 2 + 1
+                return i * 2 + 1
 
-    def deleteSmallest(self):
-        val = self.list[1]
-        self.list[1] = self.list[self.size]
-        self.size = self.size - 1
-        self.list.pop()
+    def delChild(self):
+        val = self.heapList[1]
+        self.heapList[1] = self.heapList[self.currentSize]
+        self.currentSize = self.currentSize - 1
+        self.heapList.pop()
         self.percDown(1)
         return val
 
-    def checkEmpty(self):
-        return self.list == [0]
-
-    def size(self):
-        return self.size
-
-    def buildFromList(self, list):
-        index = len(list)//2
-        self.size = len(list)
-        self.list = [0] + list[:]
-        while (index > 0):
-            self.percDown(index)
-            index = index - 1
+    def buildFromList(self, myList):
+        i = len(myList) // 2
+        self.currentSize = len(myList)
+        self.heapList = [0] + myList[:]
+        while (i > 0):
+            self.percDown(i)
+            i -= 1
