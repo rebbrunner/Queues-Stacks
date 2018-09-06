@@ -60,7 +60,9 @@ class Dequeue():
 
             self.merge_sort_main(l)
             self.merge_sort_main(r)
+            self.merge_sort_merge(A, l ,r)
 
+    def merge_sort_merge(self, A, l, r):
             i, j, k = 0, 0, 0
             while i < len(l) and j < len(r):
                 if l[i] < r[j]:
