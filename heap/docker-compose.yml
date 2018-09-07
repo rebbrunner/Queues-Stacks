@@ -1,0 +1,5 @@
+version: '2'
+services:
+  heap:
+    image: heap
+    container_name: heap

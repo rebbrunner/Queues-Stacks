@@ -1,4 +1,5 @@
 version: '3'
 services:
-  myDequeue:
+  dequeue:
     image: dequeue
+    container_name: dequeue
